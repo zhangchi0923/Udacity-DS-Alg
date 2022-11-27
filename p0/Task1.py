@@ -21,14 +21,10 @@ Print a message:
 
 
 tele_num_dict = set()
-idx = 0
-while idx < len(texts):
-    tele_num_dict.update([texts[idx][0], texts[idx][1]])
-    idx += 1
-idx = 0
-while idx < len(calls):
-    tele_num_dict.update([calls[idx][0], calls[idx][1]])
-    idx += 1
+for text in texts:
+    tele_num_dict.update([text[0], text[1]])
+for call in calls:
+    tele_num_dict.update([call[0], call[1]])
 
 print("There are {} different telephone numbers in the records.".format(len(tele_num_dict)))
 # There are 570 different telephone numbers in the records.

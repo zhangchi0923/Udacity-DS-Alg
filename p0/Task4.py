@@ -38,5 +38,7 @@ for k in range(len(calls)):
         res.add(calls[k][0])
 
 print("These numbers could be telemarketers: ")
-for num in sorted(res):
-    print(num)
+# print(*sorted(res), sep='\n')
+print('\n'.join(sorted(res)))
+# for num in sorted(res):
+#     print(num)

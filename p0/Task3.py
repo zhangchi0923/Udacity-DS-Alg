@@ -58,7 +58,7 @@ for i in range(len(calls)):
             else:
                 res_dict[code] = 1
         elif ' ' in calls[i][1]:
-            code = calls[i][1].split(' ')[0]
+            code = calls[i][1].split(' ')[0][0:4]
             if code in res_dict:
                 res_dict[code] += 1
             else:
@@ -71,10 +71,11 @@ for i in range(len(calls)):
         cnt += 1
 
 # Part A:
+# print(len(res_dict))
 print("The numbers called by people in Bangalore have codes:")
-for code in list(sorted(res_dict.keys())):
-    print(code)
+print(*sorted(res_dict.keys()), sep='\n')
+# for code in list(sorted(res_dict.keys())):
+#     print(code)
 # Part B:
 print("{pct:.2f} percent of calls from fixed lines in Bangalore are calls "
-      "to other fixed lines in Bangalore.".format(pct = res_dict['(080)'] / cnt))
-#
+      "to other fixed lines in Bangalore.".format(pct = (res_dict['(080)'] / cnt)*100))
